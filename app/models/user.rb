@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :twitter_handle
 
   after_create :add_user_to_mailchimp
   before_destroy :remove_user_from_mailchimp
@@ -66,6 +66,8 @@ class User < ActiveRecord::Base
     result = mailchimp.lists.subscribe({
       :id => ENV['MAILCHIMP_LIST_ID'],
       :email => {:email => self.email},
+      :merge_vars => {:FNAME => self.first_name, 
+                      :LNAME => self.last_name},
       :double_optin => false,
       :update_existing => true,
       :send_welcome => true

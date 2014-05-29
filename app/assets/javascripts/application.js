@@ -24,7 +24,16 @@ $('document').ready(function() {
   // use AJAX to submit the "request invitation" form
   $('#invitation_button').on('click', function() {
     var email = $('form #user_email').val();
-    var dataString = 'user[email]='+ email;
+    var first_name = $('form #user_first_name').val();
+    var last_name = $('form #user_last_name').val();
+    var twitter_handle = $('form #user_twitter_handle').val();
+    var dataString = {first_name: 'first_name', 
+                      email: 'email',
+                      last_name: 'last_name', 
+                      twitter_handle : 'twitter_handle'
+                      }
+    // var dataString = 'user[email]='+ email;
+    console.log(dataString)
     $.ajax({
       type: "POST",
       url: "/users",
@@ -49,14 +58,14 @@ function loadSocial() {
       $.getScript('http://platform.twitter.com/widgets.js');
     }
 
-    //Facebook
-    if (typeof (FB) != 'undefined') {
-      FB.init({ status: true, cookie: true, xfbml: true });
-    } else {
-      $.getScript("http://connect.facebook.net/en_US/all.js#xfbml=1", function () {
-        FB.init({ status: true, cookie: true, xfbml: true });
-      });
-    }
+    // //Facebook
+    // if (typeof (FB) != 'undefined') {
+    //   FB.init({ status: true, cookie: true, xfbml: true });
+    // } else {
+    //   $.getScript("http://connect.facebook.net/en_US/all.js#xfbml=1", function () {
+    //     FB.init({ status: true, cookie: true, xfbml: true });
+    //   });
+    // }
 
     //Google+
     if (typeof (gapi) != 'undefined') {
