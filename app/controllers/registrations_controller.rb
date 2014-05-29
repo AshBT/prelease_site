@@ -12,7 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
       else
         expire_session_data_after_sign_in!
         (render(:partial => 'thankyou', :layout => false) && return)  if request.xhr?
-        respond_with resource, :location => after_sign_up_path_for(resource) #after_inactive_sign_up_path_for(resource)
+        respond_with resource, :location => after_inactive_sign_up_path_for(resource)
       end
     else
       clean_up_passwords resource
