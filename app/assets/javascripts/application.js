@@ -27,10 +27,14 @@ $('document').ready(function() {
     var first_name = $('form #user_first_name').val();
     var last_name = $('form #user_last_name').val();
     var twitter_handle = $('form #user_twitter_handle').val();
-    var dataString = {first_name: 'first_name', 
-                      email: 'email',
-                      last_name: 'last_name', 
-                      twitter_handle : 'twitter_handle'
+  
+    var dataString = {
+                      user: {
+                        "email": email,
+                        "first_name": first_name,
+                        "last_name": last_name,
+                        "twitter_handle" : twitter_handle
+                        }
                       }
     // var dataString = 'user[email]='+ email;
     console.log(dataString)
