@@ -1,306 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contextualyze, your personal, contextual internet experience">
-    <meta name="author" content="@ashbt">
-    <link rel="shortcut icon" href="./app/assets/img/favicon.png">
-
-    <title>Contextualyze</title>
-
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="./app/assets/stylesheets/bootstrap.css" rel="stylesheet"> -->
-
-    <!-- Custom styles for this template -->
-<!--     <link href="./app/assets/stylesheets/main.css" rel="stylesheet"> -->
-
-    <!-- Fonts from Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <ul class="nav">
-                        <li>
-                        <%= link_to "Contexualyze", root_path, {:title =>"Contexualyze", :class => 'brand'} %>
-                      <% if user_signed_in? %>
-                        <li>
-                        <%= link_to 'Logout', {:title => "Log Out", :class => 'brand'}, destroy_user_session_path, :method=>'delete' %>
-                        </li>
-                      <% else %>
-                        <li>
-                        <%= link_to 'Login', new_user_session_path, {:title => "Beta Testers", :class => 'brand'} %>
-                        </li>
-                      <% end %>
-                      <% if user_signed_in? %>
-                        <li>
-                        <%= link_to 'Edit account', edit_user_registration_path, {:title => "Edit Your Account", :class => 'brand'} %>
-                        </li>
-                        <% if current_user.has_role? :admin %>
-                          <li>
-                          <%= link_to 'Admin', users_path, {:title => "Admin Account", :class => 'brand'} %>
-                          </li>
-                        <% end %>
-                      <% else %>
-                        <li>
-                        <%= link_to 'Sign up', new_user_registration_path, {:title => "Sign Up", :class => 'brand'} %>
-                        </li>
-                      <% end %>
-                    <li>
-                        <a href="http://blog.contextualyze.com" title="Blog" class="brand">Blog</a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/contextualyze" title="Contextualyze" class="brand">Twitter</a>
-                    </li>
-                    </ul>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </div>
-
-    <div id="headerwrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1>Welcome to your Contextual future.<br/></h1>
-                    <br>
-                    <div class="col-lg-6" id="call-to-action" style="text-align:center">
-                      <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request Invite</a>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <!-- /col-lg-6 -->
-                <div class="col-lg-6">
-                    <%= image_tag("ipad-hand.png",:class => "img-responsive") %> 
-                </div>
-                <!-- /col-lg-6 -->
-
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /headerwrap -->
-
-    <div id="request-invite" class="modal" style="display: <%= @user.errors.any? ? 'block' : 'none';%>">
-      <%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) , :html => {:class => 'form-horizontal' } do |f| %>
-        <div class="modal-header">
-          <a class="close" data-dismiss="modal">&#215;</a>
-          <h3>Join the Contextualyze Private Beta List</h3>
-        </div>
-        <div class="modal-body">
-          <%= f.error_notification %>
-          <%= f.input :email, :placeholder => 'your email here!' %>
-          <%= f.input :first_name, :placeholder => 'your first name here!' %>
-          <%= f.input :last_name, :placeholder => 'your last name here!' %>
-          <%= f.input :twitter_handle, :placeholder => 'your twitter handle here!' %>
-        </div>
-        <div class='aligned'>
-          <div class="modal-footer tba" style="vertical-align:middle">
-            <%= f.submit "Request Invitation", :class => "btn btn-primary", :id => 'invitation_button' %>
-            <a class="btn tba" data-dismiss="modal" href="#">Close</a>
-          </div>
-        </div>
-        <style type="text/css">
-            .modal-footer {
-                margin-top: 0;
-            }
-            .container {
-                width: 100%;
-            }
-            .btn {
-                margin-bottom: 0px;
-            }
-            a.brand {
-                color: white;
-                text-align: right;
-            }
-            .modal {
-                z-index: 1052;
-                top:250px;
-            }
-            input.string.optional {
-                width: 100%;
-            }
-
-        </style>
-      <% end %>
-    </div>
-
-
+<div id="headerwrap">
     <div class="container">
-        <div class="row mt centered">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h1>
-                    Contextualyze delivers Real-Time,<br/>personalized information and updates<br/>
-				    to Browsers, Smartphones & Smartwatches<br/>
-				</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>Welcome to your Contextual future.<br/></h1>
                 <br>
-                <hr>
-                
-            </div>
-        </div>
-        <!-- /row -->
-
-        <div class="row mt centered">
-            <div class="col-lg-4">
-                <%= image_tag("ser01.png", width: "180") %> 
-                <h2>Step 1</h2>
-                <p>
-                    Connect your bookmarks, <br>stumbles, likes, checkins, tweets &<br/>
-                    create your personal Context Graph
-                </p>
-            </div>
-            <!--/col-lg-4 -->
-
-            <div class="col-lg-4">
-                <%= image_tag("ser02.png", width: "180") %> 
-                <h2>Step 2</h2>
-                <p>
-                    Download the Chrome Browser, <br>Android Smartphone or Android Wear app<br/> and select your Interest Categories<br/>
-                </p>
-            </div>
-            <!--/col-lg-4 -->
-
-            <div class="col-lg-4">
-                <%= image_tag("ser03.png", width: "180") %>  
-                <h2>Step 3</h2>
-                <p>
-                    When you are near something you'd be <br>interested in (or you'd like a surprise)<br/>
-                    you'll get a message from Contextualyze!
-                </p>
-            </div>
-            <!--/col-lg-4 -->
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-
-    <div class="container">
-        <hr>
-        <div class="row centered">
-            <div class="col-lg-6 col-lg-offset-3">
-                <div id="call-to-action" style="text-align: center">
+                <div class="col-lg-6" id="call-to-action" style="text-align:center">
                   <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request Invite</a>
                 </div>
+                <br>
+                <br>
             </div>
-            <div class="col-lg-3"></div>
+            <!-- /col-lg-6 -->
+            <div class="col-lg-6">
+                <%= image_tag("ipad-hand.png",:class => "img-responsive") %> 
+            </div> 
+            <!-- /col-lg-6 -->
+
         </div>
         <!-- /row -->
-        <hr>
     </div>
     <!-- /container -->
+</div>
+<!-- /headerwrap -->
 
-    <div class="container">
+<div id="request-invite" class="modal" style="display: <%= @user.errors.any? ? 'block' : 'none';%>">
+  <%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) , :html => {:class => 'form-horizontal' } do |f| %>
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&#215;</a>
+      <h3>Join the Contextualyze Private Beta List</h3>
+    </div>
+    <div class="modal-body">
+      <%= f.error_notification %>
+      <%= f.input :email, :placeholder => 'your email here!' %>
+      <%= f.input :first_name, :placeholder => 'your first name here!' %>
+      <%= f.input :last_name, :placeholder => 'your last name here!' %>
+      <%= f.input :twitter_handle, :placeholder => 'your twitter handle here!' %>
+    </div>
+    <div class='aligned'>
+      <div class="modal-footer tba" style="vertical-align:middle">
+        <%= f.submit "Request Invitation", :class => "btn btn-primary", :id => 'invitation_button' %>
+        <a class="btn tba" data-dismiss="modal" href="#">Close</a>
+      </div>
+    </div>
 
-        <! -- CAROUSEL -->
-        <div class="row mt centered">
-            <div class="col-lg-6 col-lg-offset-3">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <% end %>
+</div>
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <h1>Internet for Real Life</h1>
-                            <hr>
-                            <br>
-                            <%= image_tag "p01.png" %>
-                            <h2>
-                                Use Contextualyze anywhere!<br/>
-                            </h2>
-                                <h4></h4>
-                            <h2>
-                                For food, travel, discoveries and adventure<br/>
-                                (Even in your own city!)
-                            </h2>
-                        </div>
-                        <div class="item">
-                            <h1>Don't Search, Contextualyze</h1>
-                            <hr>
-                            <br>
-                            <%= image_tag "p02.png" %>
-                            <h2>
-                                Use the Chrome Contextualyze App<br/>
-                            </h2>
-                                    <h4></h4>
-                            <h2>Enjoy a completely different <br>
-                                internet browsing experience
-                            </h2>
-                        </div>
-                        <div class="item">
-                            <h1>Your Data, Your Choice</h1>
-                            <hr>
-                            <br>
-                            <%= image_tag "p03.png" %>
-                            <h2>
-                                We don't store your data, it's yours! <br/>
-                            </h2>
-                                <h4></h4>
-                            <h2>
-                                We use our proprietary algorithms to <br>
-                                Contextualyze your online experience
-                            </h2>
-                        </div>
+<style type="text/css">
+    .modal-footer {
+        margin-top: 0;
+    }
+    .container {
+        width: 100%;
+    }
+    .btn {
+        margin-bottom: 0px;
+    }
+    a.brand {
+        color: white;
+        text-align: right;
+    }
+    .modal {
+        z-index: 1052;
+        top: 25%;
+    }
+    input.string.optional {
+        width: 100%;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row mt centered">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1>
+                Contextualyze delivers Real-Time,<br/>personalized information and updates<br/>
+			    to Browsers, Smartphones & Smartwatches<br/>
+			</h1>
+            <br>
+            <hr>
+            
+        </div>
+    </div>
+    <!-- /row -->
+
+    <div class="row mt centered">
+        <div class="col-lg-4">
+            <%= image_tag("ser01.png", width: "180") %> 
+            <h2>Step 1</h2>
+            <p>
+                Connect your bookmarks, <br>stumbles, likes, checkins, tweets &<br/>
+                create your personal Context Graph
+            </p>
+        </div>
+        <!--/col-lg-4 -->
+
+        <div class="col-lg-4">
+            <%= image_tag("ser02.png", width: "180") %> 
+            <h2>Step 2</h2>
+            <p>
+                Download the Chrome Browser, <br>Android Smartphone or Android Wear app<br/> and select your Interest Categories<br/>
+            </p>
+        </div>
+        <!--/col-lg-4 -->
+
+        <div class="col-lg-4">
+            <%= image_tag("ser03.png", width: "180") %>  
+            <h2>Step 3</h2>
+            <p>
+                When you are near something you'd be <br>interested in (or you'd like a surprise)<br/>
+                you'll get a message from Contextualyze!
+            </p>
+        </div>
+        <!--/col-lg-4 -->
+    </div>
+    <!-- /row -->
+</div>
+<!-- /container -->
+
+<div class="container">
+    <hr>
+    <div class="row centered">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div id="call-to-action" style="text-align: center">
+              <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request Invite</a>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <!-- /row -->
+    <hr>
+</div>
+<!-- /container -->
+
+<div class="container">
+
+    <! -- CAROUSEL -->
+    <div class="row mt centered">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <h1>Internet for Real Life</h1>
+                        <hr>
+                        <br>
+                        <%= image_tag "p01.png" %>
+                        <h2>
+                            Use Contextualyze anywhere!<br/>
+                        </h2>
+                            <h4></h4>
+                        <h2>
+                            For food, travel, discoveries and adventure<br/>
+                            (Even in your own city!)
+                        </h2>
                     </div>
-                    <!-- Indicators -->
-                    <!-- <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol> -->
+                    <div class="item">
+                        <h1>Don't Search, Contextualyze</h1>
+                        <hr>
+                        <br>
+                        <%= image_tag "p02.png" %>
+                        <h2>
+                            Use the Chrome Contextualyze App<br/>
+                        </h2>
+                                <h4></h4>
+                        <h2>Enjoy a completely different <br>
+                            internet browsing experience
+                        </h2>
+                    </div>
+                    <div class="item">
+                        <h1>Your Data, Your Choice</h1>
+                        <hr>
+                        <br>
+                        <%= image_tag "p03.png" %>
+                        <h2>
+                            We don't store your data, it's yours! <br/>
+                        </h2>
+                            <h4></h4>
+                        <h2>
+                            We use our proprietary algorithms to <br>
+                            Contextualyze your online experience
+                        </h2>
+                    </div>
                 </div>
-                
+                <!-- Indicators -->
+                <!-- <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol> -->
             </div>
-            <!-- /col-lg-8 -->
+            
         </div>
-        <!-- /row -->
+        <!-- /col-lg-8 -->
     </div>
-    <! --/container -->
+    <!-- /row -->
+</div>
+<! --/container -->
 
-    <div class="container">
-        <hr>
-        <div class="row centered">
-            <div class="col-lg-6 col-lg-offset-3">
-                <div id="call-to-action" style="text-align: center">
-                  <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request Invite</a>
-                </div>
+<div class="container">
+    <hr>
+    <div class="row centered">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div id="call-to-action" style="text-align: center">
+              <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request Invite</a>
             </div>
-            <div class="col-lg-3"></div>
         </div>
-        <!-- /row -->
-        <hr>
+        <div class="col-lg-3"></div>
     </div>
-    
+    <!-- /row -->
+    <hr>
+</div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-</body>
-<h3 style="text-align:center">Contextualyze(c) - a company by Ashley Beattie</h3>
 
-</html>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
