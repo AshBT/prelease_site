@@ -1,26 +1,50 @@
-<%= link_to "Rails Prelaunch Signup", root_path, :class => 'brand' %>
-<ul class="nav">
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-      <%= link_to 'Admin', users_path %>
-      </li>
-    <% end %>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
-  <% end %>
-</ul>
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <ul class="nav">
+                    <li>
+                    <%= link_to "Contexualyze", root_path, {:title =>"Contexualyze", :class => 'brand'} %>
+                  <% if user_signed_in? %>
+                    <li>
+                    <%= link_to 'Logout', {:title => "Log Out", :class => 'brand'}, destroy_user_session_path, :method=>'delete' %>
+                    </li>
+                  <% else %>
+                    <li>
+                    <%= link_to 'Login', new_user_session_path, {:title => "Beta Testers", :class => 'brand'} %>
+                    </li>
+                  <% end %>
+                  <% if user_signed_in? %>
+                    <li>
+                    <%= link_to 'Edit account', edit_user_registration_path, {:title => "Edit Your Account", :class => 'brand'} %>
+                    </li>
+                    <% if current_user.has_role? :admin %>
+                      <li>
+                      <%= link_to 'Admin', users_path, {:title => "Admin Account", :class => 'brand'} %>
+                      </li>
+                    <% end %>
+                  <% else %>
+                    <li>
+                    <%= link_to 'Sign up', new_user_registration_path, {:title => "Sign Up", :class => 'brand'} %>
+                    </li>
+                  <% end %>
+                <li>
+                    <a href="http://blog.contextualyze.com" title="Blog" class="brand">Blog</a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com/contextualyze" title="Contextualyze" class="brand">Twitter</a>
+                </li>
+                </ul>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
