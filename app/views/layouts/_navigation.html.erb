@@ -16,7 +16,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <ul class="nav">
+                <ul class="nav" style="height: 124px;">
                     <li>
                     <%= link_to "Contexualyze", root_path, {:title =>"Contexualyze", :class => 'brand'} %>
                   <% if user_signed_in? %>
@@ -39,7 +39,7 @@
                     <% end %>
                   <% else %>
                     <li>
-                    <%= link_to 'Sign up', new_user_registration_path, {:title => "Sign Up", :class => 'brand'} %>
+                    <%= link_to 'Sign Up', '#request-invite', {:title => "Sign Up", :class => 'brand', "data-toggle" => "modal"} %>
                     </li>
                   <% end %>
                 <li>
@@ -53,14 +53,3 @@
         </div>
     </div>  <!--/.nav-collapse -->
 </div>
-
-<style type="text/css">
-    a:hover, .nav > li > a:focus {
-    text-decoration: none;
-    background-color: rgba(238, 238, 238, 0.17);
-    }
-    .brand { 
-        padding-left: 12px;
-        border-radius: 3px;
-    }
-</style>

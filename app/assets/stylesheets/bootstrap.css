@@ -435,7 +435,7 @@ h6 .small,
 h1,
 h2,
 h3 {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 
@@ -2252,9 +2252,9 @@ textarea.input-lg {
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 12px 12px;
   margin-bottom: 14px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 1.428571429;
   text-align: center;
@@ -4102,7 +4102,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 1px 25px;
+  padding: 1px 15px;
   text-align: right;
 }
 
@@ -4528,7 +4528,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     float: right;
     padding: 9px 9px;
     margin-top: 8px;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     margin-bottom: 8px;
     background-color: transparent;
     background-image: none;

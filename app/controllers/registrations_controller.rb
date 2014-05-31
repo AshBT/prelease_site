@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  # skip_before_filter  :verify_authenticity_token
+  skip_before_filter  :verify_authenticity_token
 
   # override #create to respond to AJAX with a partial
   def create
