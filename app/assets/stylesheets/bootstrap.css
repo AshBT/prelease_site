@@ -4103,6 +4103,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   padding: 1px 25px;
+  text-align: right;
 }
 
 .nav > li > a:hover,

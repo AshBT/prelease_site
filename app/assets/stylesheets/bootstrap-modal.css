@@ -41,7 +41,7 @@
 	outline: none;
 	position: absolute;
 	margin-top: 0;
-	top: 50%;
+	top: 25%;
 	overflow: visible; /* allow content to popup out (i.e tooltips) */
 }
 
@@ -64,7 +64,7 @@
 
 .modal.modal-absolute {
 	position: absolute;
-	z-index: 950;
+	z-index: 1100;
 }
 
 .modal .loading-mask {

@@ -23,7 +23,7 @@
 </div>
 <!-- /headerwrap -->
 
-<div id="request-invite" class="modal" style="display: <%= @user.errors.any? ? 'block' : 'none';%>">
+<div id="request-invite" class="modal" style="display: <%= @user.errors.any? ? 'inline' : 'none';%>">
   <%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) , :html => {:class => 'form-horizontal' } do |f| %>
     <div class="modal-header">
       <a class="close" data-dismiss="modal">&#215;</a>
@@ -60,10 +60,12 @@
         color: white;
         text-align: right;
     }
+
     .modal {
-        z-index: 1052;
+        z-index: 1200;
         top: 25%;
     }
+
     input.string.optional {
         width: 100%;
     }
@@ -118,7 +120,7 @@
 </div>
 <!-- /container -->
 
-<div class="container">
+<!-- <div class="container">
     <hr>
     <div class="row centered">
         <div class="col-lg-6 col-lg-offset-3">
@@ -128,9 +130,8 @@
         </div>
         <div class="col-lg-3"></div>
     </div>
-    <!-- /row -->
     <hr>
-</div>
+</div> -->
 <!-- /container -->
 
 <div class="container">
@@ -199,19 +200,19 @@
 </div>
 <! --/container -->
 
-<div class="container">
-    <hr>
-    <div class="row centered">
+<!-- <div class="container">
+    <hr> -->
+    <!-- <div class="row centered">
         <div class="col-lg-6 col-lg-offset-3">
             <div id="call-to-action" style="text-align: center">
               <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request Invite</a>
             </div>
         </div>
         <div class="col-lg-3"></div>
-    </div>
+    </div> -->
     <!-- /row -->
-    <hr>
-</div>
+<!--     <hr>
+</div> -->
 
 
 

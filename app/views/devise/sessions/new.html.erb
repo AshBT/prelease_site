@@ -1,9 +1,70 @@
 <h2>Sign in</h2>
 <br>
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.input :email, :autofocus => true %>
+  <%= f.input :email, :autofocus => true, :size => 5, :style => "width: 304px;" %>
   <%= f.input :password %>
   <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
   <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
 <% end %>
 <%= render "devise/shared/links" %>
+
+<style type="text/css">
+	#main {
+		padding-top: 20%;
+	    padding-left: 5%;
+	    padding-right: 5%;
+	    margin-right: 5px;
+	    margin-left: 5px;
+	}
+
+	.password .optional .control-label {
+		margin-top: 5px;
+	}
+
+	.span12 {
+		border-top-width: 12px;
+	}
+
+	input#user_email {
+		width: 275px;
+	}
+
+	.password .optional {
+		width: 275px;	
+	}
+
+	.control-group .boolean .optional .user_remember_me {
+		height: 46px;
+	    width: 275px;
+	    padding-top: 5px;
+	}
+
+	.controls {
+		height: 40px;
+	}
+
+	.checkbox {
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	    height: 5px;
+	    padding-bottom: 20px;
+	}
+
+	.btn .btn-primary {
+		margin-bottom: 8px;
+	    margin-top: 14px;
+	    border-top-width: 1px;
+	}
+
+	.brand {
+		padding-left: 12px;
+		border-radius: 3px;
+		color: white;
+	}
+
+	div.alert.alert-error {
+		width: 287px;
+	}
+
+</style>
+
