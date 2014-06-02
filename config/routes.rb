@@ -1,4 +1,7 @@
 RailsPrelaunchSignup::Application.routes.draw do
+
+  resources :contact_form, only: [:new, :create, :index]
+
   authenticated :user do
     root :to => 'home#index'
   end

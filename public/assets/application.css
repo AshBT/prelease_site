@@ -7401,19 +7401,6 @@ td.visible-print {
     display: none !important;
   }
 }
-/*@import "bootstrap";
-body { padding-top: 60px; }
-@import "bootstrap-responsive";
-*/
-/*
- * Author: Carlos Alvarez
- * URL: http://alvarez.is
- *
- * Project Name: FLATTY - Free Bootstrap 3 Theme
- * Version: 1.0
- * URL: http://blacktie.co
- */
-
 
 body {
   background-color: #f2f2f2;

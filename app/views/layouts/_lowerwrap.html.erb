@@ -1,0 +1,170 @@
+<div class="container">
+    <div class="row mt centered">
+        <br>
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1>
+                Contextualyze delivers Real-Time,<br/>personalized information and updates<br/>
+			    to Browsers, Smartphones & Smartwatches<br/>
+			</h1>
+            <br>
+            <hr>
+            
+        </div>
+    </div>
+    <!-- /row -->
+
+    <div class="row mt centered">
+        <br>
+        <div class="col-lg-4">
+            <%= image_tag("ser01.png", width: "180") %> 
+            <h2>Step 1</h2>
+            <p>
+                Connect your bookmarks, <br>stumbles, likes, checkins, tweets &<br/>
+                create your personal Context Graph
+            </p>
+            <br>
+        </div>
+        <!--/col-lg-4 -->
+
+        <div class="col-lg-4">
+            <%= image_tag("ser02.png", width: "180") %> 
+            <h2>Step 2</h2>
+            <p>
+                Download the Chrome Browser, <br>Android Smartphone or Android Wear app<br/> and select your Interest Categories<br/>
+            </p>
+            <br>
+        </div>
+        <!--/col-lg-4 -->
+
+        <div class="col-lg-4">
+            <%= image_tag("ser03.png", width: "180") %>  
+            <h2>Step 3</h2>
+            <p>
+                When you are near something you'd be <br>interested in (or you'd like a surprise)<br/>
+                you'll get a message from Contextualyze!
+            </p>
+        </div>
+        <!--/col-lg-4 -->
+    </div>
+    <!-- /row -->
+</div>
+
+
+<div class="container">
+
+    <! -- CAROUSEL -->
+    <div class="row mt centered">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <h1>Internet for Real Life</h1>
+                        <hr>
+                        <br>
+                        <%= image_tag "p01.png" %>
+                        <h2>
+                            Use Contextualyze anywhere!<br/>
+                        </h2>
+                            <h4></h4>
+                        <h2>
+                            For food, travel, discoveries and adventure<br/>
+                            (Even in your own city!)
+                        </h2>
+                    </div>
+                    <div class="item">
+                        <h1>Don't Search, Contextualyze</h1>
+                        <hr>
+                        <br>
+                        <%= image_tag "p02.png" %>
+                        <h2>
+                            Use the Chrome Contextualyze App<br/>
+                        </h2>
+                                <h4></h4>
+                        <h2>Enjoy a completely different <br>
+                            internet browsing experience
+                        </h2>
+                    </div>
+                    <div class="item">
+                        <h1>Your Data, Your Choice</h1>
+                        <hr>
+                        <br>
+                        <%= image_tag "p03.png" %>
+                        <h2>
+                            We don't store your data, it's yours! <br/>
+                        </h2>
+                            <h4></h4>
+                        <h2>
+                            We use our proprietary algorithms to <br>
+                            Contextualyze your online experience
+                        </h2>
+                    </div>
+                </div>
+                <!-- Indicators -->
+                <!-- <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol> -->
+            </div>
+            
+        </div>
+        <!-- /col-lg-8 -->
+    </div>
+    <!-- /row -->
+</div>
+
+<hr>
+
+<div id="call-to-action" style="text-align:center">
+    <%= link_to "Contact Us", "/contact_form", data: { toggle: "modal", target: "#ajax-modal" } %>
+    <%= render 'layouts/modal' %>
+</div>
+
+<br>
+<!-- <div class="container">
+    <hr> -->
+    <!-- <div class="row centered">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div id="call-to-action" style="text-align: center">
+              <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request Invite</a>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div> -->
+    <!-- /row -->
+<!--     <hr>
+</div> -->
+
+
+<style type="text/css">
+    .modal-footer {
+        margin-top: 0;
+    }
+    .container {
+        width: 100%;
+    }
+    .btn {
+        margin-bottom: 0px;
+    }
+    a.brand {
+        color: white;
+        text-align: right;
+    }
+
+    .modal {
+        z-index: 1200;
+        top: 25%;
+    }
+
+    input.string.optional {
+        width: 100%;
+    }
+
+</style>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
