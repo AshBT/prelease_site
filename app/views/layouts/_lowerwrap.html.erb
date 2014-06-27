@@ -4,50 +4,55 @@
         <div class="col-lg-8 col-lg-offset-2">
             <h1>
                 Contextualyze delivers Real-Time,<br/>personalized information and updates<br/>
-			    to Browsers, Smartphones & Smartwatches<br/>
+			    to Android Wear-enabled Smartwatches<br/>
 			</h1>
             <br>
-            <hr>
             
         </div>
     </div>
     <!-- /row -->
 
+<hr>
+<br>
     <div class="row mt centered">
         <br>
         <div class="col-lg-4">
-            <%= image_tag("ser01.png", width: "180") %> 
+            <%= image_tag("logos.png", width: "180") %> 
             <h2>Step 1</h2>
             <p>
-                Connect your bookmarks, <br>stumbles, likes, checkins, tweets &<br/>
-                create your personal Context Graph
+                Login and connect your bookmarks, <br>
+                likes, pins, checkins, tweets and more<br/>
+                
             </p>
             <br>
         </div>
         <!--/col-lg-4 -->
 
         <div class="col-lg-4">
-            <%= image_tag("ser02.png", width: "180") %> 
+            <%= image_tag("1000px-Graph_betweenness.svg.png", width: "180") %> 
             <h2>Step 2</h2>
             <p>
-                Download the Chrome Browser, <br>Android Smartphone or Android Wear app<br/> and select your Interest Categories<br/>
+                Contexualyze intelligently indexes them<br>
+                to create your personal context graph <br/>
             </p>
             <br>
         </div>
         <!--/col-lg-4 -->
 
         <div class="col-lg-4">
-            <%= image_tag("ser03.png", width: "180") %>  
+            <%= image_tag("ser01.png", width: "180") %>  
             <h2>Step 3</h2>
             <p>
-                When you are near something you'd be <br>interested in (or you'd like a surprise)<br/>
-                you'll get a message from Contextualyze!
+                If something nearby is contextually relevant<br>
+                you'll get a message from <strong class="contextualyze_text">Contextualyze!</strong><br>
+                
             </p>
         </div>
         <!--/col-lg-4 -->
     </div>
     <!-- /row -->
 </div>
+<hr>
 
 
 <div class="container">
@@ -60,45 +65,59 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <h1>Internet for Real Life</h1>
+                        <h1>Explore</h1>
                         <hr>
-                        <br>
-                        <%= image_tag "p01.png" %>
                         <h2>
-                            Use Contextualyze anywhere!<br/>
+                            Find interesting things to see and do,
                         </h2>
-                            <h4></h4>
                         <h2>
-                            For food, travel, discoveries and adventure<br/>
-                            (Even in your own city!)
+                            No matter where the adventure takes you
                         </h2>
+                        <%= image_tag "welcome_to_liverpool.png" %>
+                        <h3>
+                            You want to explore on your own terms.
+                        </h3>
+                        <h3>
+                            Contextualyze = Best. Tourguide. Ever.
+                        </h3>
                     </div>
+                    
                     <div class="item">
-                        <h1>Don't Search, Contextualyze</h1>
+                        <h1>Discover</h1>
                         <hr>
-                        <br>
-                        <%= image_tag "p02.png" %>
                         <h2>
-                            Use the Chrome Contextualyze App<br/>
+                            Interesting things find you, 
                         </h2>
-                                <h4></h4>
-                        <h2>Enjoy a completely different <br>
-                            internet browsing experience
+                        <h2>
+                            Not the other way around.
                         </h2>
+                        <%= image_tag "set_mode.png"%>
+                        <h3>
+                            In Discover Mode, Contextualyze tells you about
+                        </h3>
+                        <h3>
+                             interesting things in your immediate vicinity.
+                        </h3>
+
+                        
                     </div>
+                    
                     <div class="item">
-                        <h1>Your Data, Your Choice</h1>
+                        <h1>Optimize</h1>
                         <hr>
-                        <br>
-                        <%= image_tag "p03.png" %>
                         <h2>
-                            We don't store your data, it's yours! <br/>
+                            Recommendations are contextualyzed to 
                         </h2>
-                            <h4></h4>
                         <h2>
-                            We use our proprietary algorithms to <br>
-                            Contextualyze your online experience
+                            harmonize with your daily routine
                         </h2>
+                        <%= image_tag "daily_schedule.png"%>
+                        <h3>
+                            In Daily Mode you only get recommendations which
+                        </h3>
+                        <h3>
+                            enable you to focus on what you really need to do.
+                        </h3>
                     </div>
                 </div>
                 <!-- Indicators -->
@@ -117,12 +136,10 @@
 
 <hr>
 
-<div id="call-to-action" style="text-align:center">
-    <%= link_to "Contact Us", "/contact_form", data: { toggle: "modal", target: "#ajax-modal" } %>
-    <%= render 'layouts/modal' %>
-</div>
-
 <br>
+<div style="text-align: center"> Contextualyze™ - 2014 </div>
+
+
 <!-- <div class="container">
     <hr> -->
     <!-- <div class="row centered">
@@ -155,7 +172,6 @@
 
     .modal {
         z-index: 1200;
-        top: 25%;
     }
 
     input.string.optional {

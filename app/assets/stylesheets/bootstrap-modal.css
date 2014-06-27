@@ -39,9 +39,9 @@
 
 .modal {
 	outline: none;
-	position: absolute;
+	position: fixed;
 	margin-top: 0;
-	top: 25%;
+	/*top: 50%;*/
 	overflow: visible; /* allow content to popup out (i.e tooltips) */
 }
 

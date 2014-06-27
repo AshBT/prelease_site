@@ -8,7 +8,7 @@
     ">
     <div class="container" style="width: 150px;">
         <div class="navbar-header"style="width: 135px;padding-right: 30px;padding-left: 30px;padding-top: 0px;">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: #3498db">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -16,38 +16,19 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <ul class="nav" style="height: 124px;">
+                <ul class="nav" style="height: 99px; background-color: #3498db; border-radius: 6px;">
                     <li>
                     <%= link_to "Contexualyze", root_path, {:title =>"Contexualyze", :class => 'brand'} %>
-                  <% if user_signed_in? %>
-                    <li>
-                    <%= link_to 'Logout', {:title => "Log Out", :class => 'brand'}, destroy_user_session_path, :method=>'delete' %>
                     </li>
-                  <% else %>
-                    <li>
-                    <%= link_to 'Login', new_user_session_path, {:title => "Beta Testers", :class => 'brand'} %>
-                    </li>
-                  <% end %>
-                  <% if user_signed_in? %>
-                    <li>
-                    <%= link_to 'Edit account', edit_user_registration_path, {:title => "Edit Your Account", :class => 'brand'} %>
-                    </li>
-                    <% if current_user.has_role? :admin %>
-                      <li>
-                      <%= link_to 'Admin', users_path, {:title => "Admin Account", :class => 'brand'} %>
-                      </li>
-                    <% end %>
-                  <% else %>
                     <li>
                     <%= link_to 'Sign Up', '#request-invite', {:title => "Sign Up", :class => 'brand', "data-toggle" => "modal"} %>
                     </li>
-                  <% end %>
-                <li>
-                    <a href="http://blog.contextualyze.com" title="Blog" class="brand">Blog</a>
-                </li>
-                <li>
-                    <a href="https://www.twitter.com/contextualyze" title="Contextualyze" class="brand">Twitter</a>
-                </li>
+                    <li>
+                        <a href="http://blog.contextualyze.com" title="Blog" class="brand">Blog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com/contextualyze" title="Contextualyze" class="brand">@Twitter</a>
+                    </li>
                 </ul>
             </ul>
         </div>
