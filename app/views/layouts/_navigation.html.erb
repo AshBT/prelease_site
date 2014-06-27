@@ -1,36 +1,35 @@
 <!-- Fixed navbar -->
 <div class="navbar navbar-default navbar-fixed-top" style="
-    width: 150px;
+    width: 200px;
     float: right;
     right: 1px;
     left: auto;
     border-radius: 3px;
+    top: 5%;
     ">
-    <div class="container" style="width: 150px;">
-        <div class="navbar-header"style="width: 135px;padding-right: 30px;padding-left: 30px;padding-top: 0px;">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: #3498db">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+    <div class="container" style="text-align: center; padding-left: 95px;">
+        <div class="btn-group" style="padding-left: 10%; padding-top: 15%; padding-right:10%;">
+            <button type="button" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #ffffff">
+                <%= image_tag("ser01.png", width: "30") %>
             </button>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <ul class="nav" style="height: 99px; background-color: #3498db; border-radius: 6px;">
-                    <li>
-                    <%= link_to "Contexualyze", root_path, {:title =>"Contexualyze", :class => 'brand'} %>
-                    </li>
-                    <li>
-                    <%= link_to 'Sign Up', '#request-invite', {:title => "Sign Up", :class => 'brand', "data-toggle" => "modal"} %>
-                    </li>
-                    <li>
-                        <a href="http://blog.contextualyze.com" title="Blog" class="brand">Blog</a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/contextualyze" title="Contextualyze" class="brand">@Twitter</a>
-                    </li>
-                </ul>
-            </ul>
+
+          <ul class="dropdown-menu" style="background-color: #3498db; border-radius: 4px; padding-left:0px; right:9px;">
+            <li>
+            <%= link_to "Contexualyze", root_path, {:title =>"Contexualyze", :class => 'brand'} %>
+            </li>
+            <li>
+            <%= link_to 'Sign Up', '#request-invite', {:title => "Sign Up", :class => 'brand', "data-toggle" => "modal"} %>
+            </li>
+            <li>
+                <a href="http://blog.contextualyze.com" title="Blog" class="brand">Blog</a>
+            </li>
+            <li>
+                <a href="https://www.twitter.com/contextualyze" title="Contextualyze" class="brand">@Twitter</a>
+            </li>
+          </ul>
         </div>
     </div>  <!--/.nav-collapse -->
 </div>
+
+
+

@@ -3524,14 +3524,15 @@ input[type="button"].btn-block {
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  /*left: 0;*/
+  right: 0;
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  /*min-width: 160px;*/
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 14px;
+  font-size: 16px;
   list-style: none;
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -3556,11 +3557,11 @@ input[type="button"].btn-block {
 
 .dropdown-menu > li > a {
   display: block;
-  padding: 3px 20px;
+  padding: 1px 10px 0px 18px;
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #333333;
+  /*color: #333333;*/
   white-space: nowrap;
 }
 
